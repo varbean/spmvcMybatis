@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.chen.test.dao.TestDao">
+    <resultMap id="TestPhotoMap" type="com.chen.test.entity.TestPhoto">
+        <id column="id" property="id" />
+        <result column="zkbh" property="zkbh" />
+        <result column="createdate" property="createTime" />
+    </resultMap>
+    <!-- <insert id="CreateUser" parameterType="java.util.Map">
+         INSERT INTO t_testc
+     </insert>-->
+    <select id="testQuery" parameterType="java.lang.String" resultMap="TestPhotoMap">
+        SELECT * FROM phupload_success WHERE id = #{photoId}
+    </select>
+</mapper>
